@@ -2,6 +2,8 @@
 
 ## Bluetooth and custom text in the display
 
+N.B. If you do not use D2 for the clock pin, you MUST change it to pin D3, and change INT_NUM to 1. 
+
 ### This is my latest code and schematics. If anyone misses the old files, tell me and I'll put them up again.
 But I think this is so much better than earlier versions so I deleted them.
 
