@@ -19,6 +19,13 @@
 #define MELBUS_CLOCKBIT (byte)2 //Pin D2  - CLK
 #define MELBUS_DATA (byte)3     //Pin D3  - Data
 #define MELBUS_BUSY (byte)4     //Pin D4  - Busy
+/*Alternate pins
+ WS 12-18-2017
+ #define INT_NUM (byte)1         //Interrupt number (0/1 on ATMega 328P)
+ #define MELBUS_CLOCKBIT (byte)3 //Pin D2  - CLK
+ #define MELBUS_DATA (byte)4     //Pin D3  - Data
+ #define MELBUS_BUSY (byte)5     //Pin D4  - Busy
+*/
 
 const byte prevPin = 8;
 const byte nextPin = 9;
@@ -352,6 +359,7 @@ void loop() {
                       SendByteToMelbus();                      
                     }
                     if (melbus_ReceivedByte == CDC_BASE_ID) {
+//Comment the two lines below to disable CD-CHGR Input                      
                       byteToSend = CDC_RESPONSE_ID;
                       SendByteToMelbus();                      
                     }
@@ -366,6 +374,7 @@ void loop() {
                   if (byteIsRead) {
                     byteIsRead = false;
                     if (melbus_ReceivedByte == CDC_BASE_ID) {
+//Comment the two lines below to disable CD-CHGR Input
                       byteToSend = CDC_RESPONSE_ID;
                       SendByteToMelbus();
                     }
